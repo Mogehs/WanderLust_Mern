@@ -1,0 +1,27 @@
+<% layout("/layout/basic") %>
+
+    <%- include("../includes/categories.ejs") %>
+
+        <h3><b>Search results for "<%=search%>"</b></h3>
+        <br>
+
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 ">
+            <%for(let list of listing){%>
+                <a href="/listings/<%=list._id%>" class="inserting_list">
+                    <div class="card col listing-card" style="height: 20rem;">
+                        <img src="<%=list.image.url%>" class="card-img-top" alt="listing_image" style="height: 16rem;">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>
+                                    <%=list.title%>
+                                </b> <br>
+                                <span>Rs.</span>
+                                <%=list.price%> / Night
+                                    <i class="tax">&nbsp; 18.5% GST</i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
