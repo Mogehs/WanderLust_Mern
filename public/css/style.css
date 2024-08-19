@@ -141,22 +141,21 @@ footer {
 }
 
 /*Catogaries*/
-.filter-switch {
-  display: flex;
-  align-items: center;
+.all-catogories {
   background-color: white;
-  width: 102%;
   position: sticky;
-  top: 12.7%;
+  top: 13vh;
   z-index: 1;
 }
 
 #filters {
-  margin-top: 0.5rem;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
+  width: 90%;
+  margin: auto;
   gap: 2rem;
-  width: 80%;
+
   overflow-x: auto;
 }
 
@@ -177,18 +176,6 @@ footer {
   opacity: 1;
 }
 
-.tax-switch {
-  border: 0.2px solid black;
-  border-radius: 0.8rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  /* margin-left: 2.5rem; */
-  width: 15rem;
-}
 .tax {
   display: none;
 }
