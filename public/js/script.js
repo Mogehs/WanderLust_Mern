@@ -20,15 +20,3 @@
     );
   });
 })();
-
-let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-let taxList = document.getElementsByClassName("tax");
-taxSwitch.addEventListener("click", () => {
-  for (tax of taxList) {
-    if (tax.style.display != "inline") {
-      tax.style.display = "inline";
-    } else {
-      tax.style.display = "none";
-    }
-  }
-});
