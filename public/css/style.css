@@ -81,7 +81,10 @@ footer {
 /*cards*/
 
 .row {
-  width: 90vw;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 .listing-card {
   border: none !important;
@@ -146,6 +149,9 @@ footer {
   position: sticky;
   top: 13vh;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #filters {
@@ -154,9 +160,9 @@ footer {
   align-items: center;
   width: 90%;
   margin: auto;
-  gap: 2rem;
-
+  gap: 1.4rem;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 #filters a {
@@ -167,7 +173,7 @@ footer {
 .filter {
   text-align: center;
   opacity: 0.6;
-  font-size: 0.8rem;
+  font-size: 75%;
   font-weight: bold;
 }
 
@@ -204,4 +210,19 @@ footer {
 .search-box {
   border-radius: 2rem;
   width: 15rem;
+}
+
+.flex-index {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+@media only screen and (min-width: 568px) {
+  .flex .card {
+    height: 200px;
+  }
+  .flex .card img {
+    height: 200px;
+  }
 }
