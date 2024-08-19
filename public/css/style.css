@@ -59,9 +59,8 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   font-size: smaller;
-  background-color: rgb(210, 209, 209);
-  margin-top: 15rem;
-  padding: 10px;
+  background-color: azure;
+  margin-top: 05rem;
 }
 .f-socials {
   width: 100%;
@@ -82,11 +81,7 @@ footer {
 /*cards*/
 
 .row {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  justify-content: flex-start;
+  width: 90vw;
 }
 .listing-card {
   border: none !important;
@@ -97,7 +92,7 @@ footer {
   border-radius: 0.5rem;
   object-fit: cover !important;
   width: 100% !important;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 .card-body {
   margin: 0 !important;
@@ -219,16 +214,4 @@ footer {
   display: flex;
   justify-content: center;
   align-items: start;
-}
-
-@media only screen and (max-width: 568px) {
-  .card-img-top {
-    height: 50rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .listing-card {
-    margin-bottom: 6rem !important;
-  }
 }

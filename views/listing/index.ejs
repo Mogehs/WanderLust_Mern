@@ -1,11 +1,12 @@
 <% layout("/layout/basic") %>
   <%- include("../includes/categories.ejs") %>
     <div class="flex-index">
-      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 flex">
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-3 row-cols-1 ">
         <%for(let list of allListings){%>
           <a href="/listings/<%=list._id%>" class="inserting_list">
-            <div class="card col listing-card" style="height: 20rem;">
-              <img src="<%=list.image.url%>" class="card-img-top" alt="listing_image">
+            <div class="card col listing-card" style="height: 48vh;">
+              <img src="<%=list.image.url%>" class="card-img-top" alt="listing_image"
+                style="height: 35vh; width: 45vw;">
               <div class="card-img-overlay"></div>
               <div class="card-body">
                 <p class="card-text">
