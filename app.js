@@ -43,12 +43,12 @@ app.listen(8080, () => {
 const store = MongoStore.create({
   mongoUrl: url,
   crypto: {
-    secrete: process.env.SECRETE,
+    secret: process.env.SECRETE,
   },
   touchAfter: 24 * 3600,
 });
 
-store.on("error", () => {
+store.on("error", (error) => {
   console.log("Erro In MongoDB Store", error);
 });
 
