@@ -4,8 +4,8 @@
       <%=item.title%>
     </b></h3>
   <br>
-  <div class="row">
-    <div class="col-8 offset-3">
+  <div class="row flex-show">
+    <div class="col-8 offset-2">
       <div class="card col-9 show-card listing-card">
         <img src=<%=item.image.url%> class="card-img-top" alt="listing-images" height="250rem" >
         <div class="card-body">
@@ -45,15 +45,15 @@
     </div>
   </div>
 
-  <%if(currUser){%>
-    <hr>
-    <h3><b>Leave A Review</b></h3>
+  <hr>
+  <h3><b>Leave A Review</b></h3>
 
-    <div class="review row col-8 offset-2">
+  <%if(currUser){%>
+    <div class="review row col-8 offset-2 flex-show">
 
       <form action="/listings/<%=item._id%>/reviews" method="post" novalidate class="needs-validation">
         <label for="rating" class="form-label mt-2">Ratings :</label>
-        <fieldset class="starability-slot">
+        <fieldset class="starability-slot" id="rating">
           <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
             aria-label="No review[rating]." />
           <input type="radio" id="first-rate1" name="review[rating]" value="1" />
@@ -78,32 +78,41 @@
       </form>
     </div>
 
-    <%}%>
-      <hr>
-      <h3><b>All Reviews</b></h3>
-      <div class="row col-8 offset-2 review-setting">
-        <%if(!item.reviews.length){%>
-          <p>No Review To Show</p>
-          <%}%>
-            <%for(review of item.reviews) {%>
-              <div class="row card mt-3 col-6">
-                <div class="card-title">
-                  <h5>
-                    <b>
-                      @<%=review.author.username%>
-                    </b>
-                  </h5>
-                  <p class="starability-result card-text" data-rating=<%=review.rating%>>
-                  </p>
-                  <p>
-                    <%=review.comment%>,
-                  </p>
-                  <%if(currUser && currUser._id.equals(review.author._id)){%>
-                    <form method="post" action="/listings/<%=item._id%>/reviews/<%=review._id%>?_method=delete">
-                      <button class="btn btn-sm btn-dark">Delete</button>
-                    </form>
-                    <%}%>
-                </div>
-              </div>
-              <%}%>
+    <%} else{ %>
+      <div class="leave-review">
+        Click Here To
+        <a href="/login"> &nbsp;Login</a>
       </div>
+      <%}%>
+        <hr>
+        <h3><b>All Reviews</b></h3>
+        <div class="row col-8 offset-2 review-setting">
+          <%if(!item.reviews.length){%>
+            <p class="flex-index mt-2"><b>
+                No Review To Show
+              </b></p>
+            <%}%>
+              <%for(review of item.reviews) {%>
+                <div class="row card mt-3 col-6" style="border: none;">
+                  <hr>
+                  <div class="card-title">
+                    <h5>
+                      <b>
+                        @<%=review.author.username%>
+                      </b>
+                    </h5>
+                    <p class="starability-result card-text" data-rating=<%=review.rating%>>
+                    </p>
+                    <p>
+                      <%=review.comment%>,
+                    </p>
+                    <%if(currUser && currUser._id.equals(review.author._id)){%>
+                      <form method="post" action="/listings/<%=item._id%>/reviews/<%=review._id%>?_method=delete">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                      </form>
+                      <%}%>
+                  </div>
+                  <hr>
+                </div>
+                <%}%>
+        </div>

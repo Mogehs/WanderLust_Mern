@@ -59,8 +59,9 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   font-size: smaller;
-  background-color: azure;
-  margin-top: 05rem;
+  background-color: rgb(217, 217, 217);
+  margin-top: 15rem;
+  padding: 0.5rem;
 }
 .f-socials {
   width: 100%;
@@ -141,11 +142,34 @@ footer {
   justify-content: space-between;
 }
 
+.review-setting h5 {
+  font-size: 1rem;
+}
+
+.review-setting p {
+  font-size: 1rem !important;
+}
+.review-cards {
+  display: flex;
+  justify-content: space-between;
+}
+.leave-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  text-align: center;
+}
+.leave-review a {
+  text-decoration: none;
+  color: #fe424d;
+}
+
 /*Catogaries*/
 .all-catogories {
   background-color: white;
   position: sticky;
-  top: 11vh;
+  top: 04rem;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -214,4 +238,39 @@ footer {
   display: flex;
   justify-content: center;
   align-items: start;
+}
+.flex-show {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.nolist-category {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.nolist-category h4 {
+  font-weight: bolder;
+}
+
+.signup-a {
+  text-decoration: none;
+  color: #fe424d;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .review-setting {
+    display: flex;
+    flex-direction: column;
+  }
 }
