@@ -43,7 +43,7 @@ app.listen(8080, () => {
 const store = MongoStore.create({
   mongoUrl: url,
   crypto: {
-    secret: process.env.SECRETE,
+    secrete: process.env.SECRETE,
   },
   touchAfter: 24 * 3600,
 });
